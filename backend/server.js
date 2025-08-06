@@ -10,7 +10,7 @@ dotenv.config();
 
 // Middleware
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'http://localhost:5173'],
+  origin: ['https://mini-linkedin-eosin.vercel.app', 'http://localhost:5173'],
   credentials: true
 }));
 
