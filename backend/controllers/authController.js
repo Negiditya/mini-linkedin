@@ -63,11 +63,11 @@ const loginUser = async (req, res) => {
             expiresIn: '7d' // Extend to 7 days for better UX
         });
 
-        // Set cookie with proper options
+      
         res.cookie('token', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Only secure in production
-            sameSite: 'Strict',
+            secure: process.env.NODE_ENV === 'production', 
+            sameSite: 'none',
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
 
@@ -79,7 +79,7 @@ const loginUser = async (req, res) => {
             user: {
                 _id: user._id,
                 name: user.name,
-                username: user.username, // Make sure to include username
+                username: user.username, 
                 email: user.email,
                 bio: user.bio
             }
